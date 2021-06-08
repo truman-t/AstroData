@@ -1,0 +1,4065 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='WolframDesktop 12.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       161,          7]
+NotebookDataLength[    187309,       4057]
+NotebookOptionsPosition[    186506,       4035]
+NotebookOutlinePosition[    186904,       4051]
+CellTagsIndexPosition[    186861,       4048]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+  "root", "=", 
+   "\"\<http://simbad.u-strasbg.fr/simbad/sim-tap/sync?request=doQuery&lang=\
+adql&format=tsv&query=\>\""}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"query", "=", 
+   RowBox[{"URLEncode", "[", "\"\<select * from otypedef;\>\"", "]"}]}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{{3.8208623298619003`*^9, 3.8208623327590027`*^9}, 
+   3.820862383867146*^9},
+ CellLabel->"In[14]:=",ExpressionUUID->"c2f93116-1d0b-4dfe-8782-6811fce639e4"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"data", "=", 
+   RowBox[{"Import", "[", 
+    RowBox[{"root", "~~", "query"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"AssociationThread", "[", 
+    RowBox[{
+     RowBox[{"First", "[", "data", "]"}], "\[Rule]", "#"}], "]"}], "&"}], "/@", 
+  RowBox[{"Rest", "[", "data", "]"}]}]}], "Input",
+ CellChangeTimes->{{3.820862385061759*^9, 3.820862410680228*^9}, {
+  3.820862448117289*^9, 3.820862450261403*^9}, {3.8208624936497507`*^9, 
+  3.820862544550177*^9}, {3.820862582594532*^9, 3.820862584174843*^9}},
+ CellLabel->"In[21]:=",ExpressionUUID->"e05e544d-9cc3-4e6b-a96d-97781278da46"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", "0"}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Object of unknown nature\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"?\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", "33554432"}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", "\[Rule]", "\<\"transient event\"\>"}],
+      ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"ev\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", "268435456"}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", "\[Rule]", "\<\"Radio-source\"\>"}], 
+     ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"Rad\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", "301989888"}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"metric Radio-source\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"mR\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", "335544320"}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"centimetric Radio-source\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"cm\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", "369098752"}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"millimetric Radio-source\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"mm\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", "402653184"}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"sub-millimetric source\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"smm\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", "452984832"}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"HI (21cm) source\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"HI\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", "469762048"}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", "\[Rule]", "\<\"radio Burst\"\>"}], 
+     ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"rB\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", "503316480"}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", "\[Rule]", "\<\"Maser\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"Mas\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", "536870912"}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Infra-Red source\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"IR\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", "570425344"}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Far-IR source  (\\\\lambda >= 30 {\\\\mu}m)\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"FIR\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", "603979776"}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Near-IR source (\\\\lambda < 10 {\\\\mu}m)\"\>"}], ",", 
+     
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"NIR\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", "805306368"}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", "\[Rule]", "\<\"Very red source\"\>"}],
+      ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"red\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", "855638016"}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Extremely Red Object\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"ERO\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", "1073741824"}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", "\[Rule]", "\<\"Blue object\"\>"}], 
+     ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"blu\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", "1342177280"}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"UV-emission source\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"UV\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", "1610612736"}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", "\[Rule]", "\<\"X-ray source\"\>"}], 
+     ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"X\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", "1644167168"}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Ultra-luminous X-ray candidate\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"UX?\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", "1778384896"}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Ultra-luminous X-ray source\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"ULX\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", "1879048192"}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"gamma-ray source\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"gam\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", "1929379840"}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", "\[Rule]", "\<\"gamma-ray Burst\"\>"}],
+      ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"gB\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "1879048192"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Gravitational Source\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"grv\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "1828716544"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"(Micro)Lensing Event\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"Lev\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "1778384896"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Possible gravitational lens System\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"LS?\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "1761607680"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Possible gravitational lens\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"Le?\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "1744830464"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Possible gravitationally lensed image\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"LI?\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "1728053248"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Gravitational Lens\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"gLe\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "1694498816"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Gravitational Lens System (lens+images)\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"gLS\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "1610612736"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Candidate objects\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"..?\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "1593835520"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", "\[Rule]", "\<\"Possible Galaxy\"\>"}],
+      ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"G?\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "1577058304"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Possible Supercluster of Galaxies\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"SC?\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "1560281088"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Possible Cluster of Galaxies\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"C?G\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "1543503872"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Possible Group of Galaxies\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"Gr?\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "1426063360"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Physical Binary Candidate\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"**?\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "1425539072"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Eclipsing Binary Candidate\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"EB?\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "1420820480"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Symbiotic Star Candidate\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"Sy?\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "1420296192"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Cataclysmic Binary Candidate\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"CV?\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "1420099584"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", "\[Rule]", "\<\"Nova Candidate\"\>"}], 
+     ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"No?\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "1419771904"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"X-ray binary Candidate\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"XB?\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "1419706368"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Low-Mass X-ray binary Candidate\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"LX?\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "1419673600"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"High-Mass X-ray binary Candidate\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"HX?\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "1409286144"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Possible Peculiar Star\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"Pec?\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "1408761856"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Young Stellar Object Candidate\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"Y*?\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "1408237568"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Pre-main sequence Star Candidate\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"pr?\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "1408139264"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"T Tau star Candidate\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"TT?\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "1407713280"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Possible Carbon Star\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"C*?\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "1407188992"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", "\[Rule]", "\<\"Possible S Star\"\>"}],
+      ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"S*?\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "1406664704"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Possible Star with envelope of OH/IR type\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"OH?\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "1406140416"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Possible Star with envelope of CH type\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"CH?\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "1405616128"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Possible Wolf-Rayet Star\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"WR?\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "1405091840"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Possible Be Star\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"Be?\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "1404567552"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Possible Herbig Ae/Be Star\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"Ae?\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "1403518976"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Possible Horizontal Branch Star\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"HB?\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "1403453440"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Possible Star of RR Lyr type\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"RR?\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "1403420672"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Possible Cepheid\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"Ce?\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "1402994688"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Possible Red Giant Branch star\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"RB?\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "1402470400"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Possible Supergiant star\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"sg?\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "1402372096"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Possible Red supergiant star\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"s?r\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "1402339328"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Possible Yellow supergiant star\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"s?y\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "1402306560"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Possible Blue supergiant star\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"s?b\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "1401946112"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Asymptotic Giant Branch Star candidate\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"AB?\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "1401913344"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Long Period Variable candidate\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"LP?\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "1401880576"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", "\[Rule]", "\<\"Mira candidate\"\>"}], 
+     ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"Mi?\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "1401847808"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Semi-regular variable candidate\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"sv?\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "1401421824"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Post-AGB Star Candidate\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"pA?\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "1400897536"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Candidate blue Straggler Star\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"BS?\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "1399848960"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"White Dwarf Candidate\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"WD?\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "1398800384"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Neutron Star Candidate\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"N*?\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "1397751808"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Black Hole Candidate\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"BH?\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "1397227520"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"SuperNova Candidate\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"SN?\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "1396703232"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Low-mass star candidate\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"LM?\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "1395654656"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Brown Dwarf Candidate\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"BD?\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "1073741824"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Composite object\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"mul\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "1056964608"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Region defined in the sky\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"reg\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "1054343168"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Underdense region of the Universe\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"vid\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "1040187392"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Supercluster of Galaxies\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"SCG\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "1023410176"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Cluster of Galaxies\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"ClG\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "1006632960"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Group of Galaxies\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"GrG\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "1004011520"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Compact Group of Galaxies\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"CGG\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "989855744"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Pair of Galaxies\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"PaG\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "987234304"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Interacting Galaxies\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"IG\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "922746880"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Possible (open) star cluster\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"C?*\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "905969664"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Possible Globular Cluster\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"Gl?\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "889192448"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Cluster of Stars\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"Cl*\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "888668160"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Globular Cluster\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"GlC\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "888143872"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Open (galactic) Cluster\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"OpC\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "872415232"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Association of Stars\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"As*\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "871890944"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", "\[Rule]", "\<\"Stellar Stream\"\>"}], 
+     ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"St*\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "871366656"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", "\[Rule]", "\<\"Moving Group\"\>"}], 
+     ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"MGr\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "855638016"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Double or multiple star\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"**\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "855113728"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Eclipsing binary\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"EB*\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "855080960"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Eclipsing binary of Algol type (detached)\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"Al*\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "855048192"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Eclipsing binary of beta Lyr type \
+(semi-detached)\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"bL*\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "855015424"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Eclipsing binary of W UMa type (contact binary)\"\>"}], 
+     ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"WU*\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "854851584"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Star showing eclipses by its planet\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"EP*\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "854589440"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Spectroscopic binary\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"SB*\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "853016576"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Ellipsoidal variable Star\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"El*\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "850395136"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", "\[Rule]", "\<\"Symbiotic Star\"\>"}], 
+     ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"Sy*\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "849870848"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Cataclysmic Variable Star\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"CV*\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "849805312"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"CV DQ Her type (intermediate polar)\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"DQ*\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "849772544"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"CV of AM Her type (polar)\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"AM*\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "849707008"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", "\[Rule]", "\<\"Nova-like Star\"\>"}], 
+     ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"NL*\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "849674240"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", "\[Rule]", "\<\"Nova\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"No*\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "849641472"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", "\[Rule]", "\<\"Dwarf Nova\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"DN*\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "849346560"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", "\[Rule]", "\<\"X-ray Binary\"\>"}], 
+     ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"XB*\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "849281024"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Low Mass X-ray Binary\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"LXB\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "849248256"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"High Mass X-ray Binary\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"HXB\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "805306368"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Interstellar matter\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"ISM\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "788529152"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", "\[Rule]", "\<\"Part of Cloud\"\>"}], 
+     ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"PoC\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "771751936"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Possible Planetary Nebula\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"PN?\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "754974720"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Cometary Globule\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"CGb\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "738197504"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", "\[Rule]", "\<\"Bubble\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"bub\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "704643072"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", "\[Rule]", "\<\"Emission Object\"\>"}],
+      ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"EmO\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "671088640"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", "\[Rule]", "\<\"Cloud\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"Cld\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "669515776"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", "\[Rule]", "\<\"Galactic Nebula\"\>"}],
+      ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"GNe\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "668991488"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", "\[Rule]", "\<\"Bright Nebula\"\>"}], 
+     ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"BNe\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "667942912"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Dark Cloud (nebula)\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"DNe\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "667418624"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Reflection Nebula\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"RNe\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "664797184"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", "\[Rule]", "\<\"Molecular Cloud\"\>"}],
+      ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"MoC\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "664698880"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Globule (low-mass dark cloud)\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"glb\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "664600576"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", "\[Rule]", "\<\"Dense core\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"cor\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "664535040"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Star forming region\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"SFR\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "664272896"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"High-velocity Cloud\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"HVC\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "654311424"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"HII (ionized) region\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"HII\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "637534208"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Planetary Nebula\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"PN\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "620756992"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", "\[Rule]", "\<\"HI shell\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"sh\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "603979776"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"SuperNova Remnant Candidate\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"SR?\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "587202560"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"SuperNova Remnant\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"SNR\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "570425344"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"CircumStellar matter\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"cir\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "569901056"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Outflow candidate\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"of?\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "562561024"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", "\[Rule]", "\<\"Outflow\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"out\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "562036736"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Herbig-Haro Object\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"HH\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "536870912"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", "\[Rule]", "\<\"Star\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"*\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "520093696"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", "\[Rule]", "\<\"Star in Cluster\"\>"}],
+      ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"*iC\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "503316480"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", "\[Rule]", "\<\"Star in Nebula\"\>"}], 
+     ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"*iN\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "486539264"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Star in Association\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"*iA\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "469762048"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Star in double system\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"*i*\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "452984832"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Star suspected of Variability\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"V*?\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "436207616"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", "\[Rule]", "\<\"Peculiar Star\"\>"}], 
+     ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"Pe*\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "435683328"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Horizontal Branch Star\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"HB*\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "435159040"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Young Stellar Object\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"Y*O\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "435027968"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Herbig Ae/Be star\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"Ae*\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "433586176"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Emission-line Star\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"Em*\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "433487872"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", "\[Rule]", "\<\"Be Star\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"Be*\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "433061888"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Blue Straggler Star\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"BS*\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "430964736"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Red Giant Branch star\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"RG*\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "429916160"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Asymptotic Giant Branch Star (He-burning)\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"AB*\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "429817856"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", "\[Rule]", "\<\"Carbon Star\"\>"}], 
+     ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"C*\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "429719552"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", "\[Rule]", "\<\"S Star\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"S*\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "429391872"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Evolved supergiant star\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"sg*\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "429293568"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Red supergiant star\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"s*r\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "429260800"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Yellow supergiant star\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"s*y\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "429228032"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Blue supergiant star\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"s*b\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "428343296"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Post-AGB Star (proto-PN)\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"pA*\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "427819008"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", "\[Rule]", "\<\"White Dwarf\"\>"}], 
+     ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"WD*\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "427786240"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Pulsating White Dwarf\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"ZZ*\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "427294720"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Low-mass star (M<1solMass)\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"LM*\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "426770432"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Brown Dwarf (M<0.08solMass)\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"BD*\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "426246144"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Confirmed Neutron Star\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"N*\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "424148992"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", "\[Rule]", "\<\"OH/IR star\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"OH*\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "423624704"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Star with envelope of CH type\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"CH*\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "423100416"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Pre-main sequence Star\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"pr*\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "423002112"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", "\[Rule]", "\<\"T Tau-type Star\"\>"}],
+      ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"TT*\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "420478976"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", "\[Rule]", "\<\"Wolf-Rayet Star\"\>"}],
+      ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"WR*\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "419430400"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"High proper-motion Star\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"PM*\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "402653184"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"High-velocity Star\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"HV*\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "385875968"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", "\[Rule]", "\<\"Variable Star\"\>"}], 
+     ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"V*\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "385351680"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Variable Star of irregular type\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"Ir*\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "385318912"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Variable Star of Orion Type\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"Or*\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "385286144"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Variable Star with rapid variations\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"RI*\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "384303104"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Eruptive variable Star\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"Er*\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "384270336"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", "\[Rule]", "\<\"Flare Star\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"Fl*\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "384237568"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Variable Star of FU Ori type\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"FU*\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "384172032"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Variable Star of R CrB type\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"RC*\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "384139264"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Variable Star of R CrB type candiate\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"RC?\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "383778816"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Rotationally variable Star\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"Ro*\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "383746048"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Variable Star of alpha2 CVn type\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"a2*\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "383680512"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", "\[Rule]", "\<\"Pulsar\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"Psr\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "383647744"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Variable of BY Dra type\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"BY*\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "383614976"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Variable of RS CVn type\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"RS*\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "383254528"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Pulsating variable Star\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"Pu*\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "383188992"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Variable Star of RR Lyr type\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"RR*\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "383156224"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Cepheid variable Star\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"Ce*\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "383090688"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Variable Star of delta Sct type\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"dS*\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "383057920"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Variable Star of RV Tau type\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"RV*\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "383025152"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Variable Star of W Vir type\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"WV*\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "382992384"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Variable Star of beta Cep type\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"bC*\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "382959616"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Classical Cepheid (delta Cep type)\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"cC*\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "382926848"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Variable Star of gamma Dor type\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"gD*\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "382894080"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Variable Star of SX Phe type (subdwarf)\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"SX*\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "382730240"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Long-period variable star\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"LP*\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "382697472"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Variable Star of Mira Cet type\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"Mi*\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "382599168"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Semi-regular pulsating Star\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"sr*\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "381681664"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", "\[Rule]", "\<\"SuperNova\"\>"}], ",", 
+     
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"SN*\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "301989888"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Sub-stellar object\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"su*\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "300941312"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Extra-solar Planet Candidate\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"Pl?\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "296747008"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Extra-solar Confirmed Planet\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"Pl\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "268435456"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", "\[Rule]", "\<\"Galaxy\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"G\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "251658240"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Part of a Galaxy\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"PoG\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "234881024"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Galaxy in Cluster of Galaxies\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"GiC\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "233832448"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Brightest galaxy in a Cluster (BCG)\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"BiC\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "218103808"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Galaxy in Group of Galaxies\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"GiG\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "201326592"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Galaxy in Pair of Galaxies\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"GiP\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "184549376"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Galaxy with high redshift\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"HzG\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "167772160"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Absorption Line system\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"ALS\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "167247872"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Ly alpha Absorption Line system\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"LyA\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "166723584"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Damped Ly-alpha Absorption Line system\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"DLA\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "166199296"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"metallic Absorption Line system\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"mAL\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "165150720"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Lyman limit system\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"LLS\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "163577856"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Broad Absorption Line system\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"BAL\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "150994944"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", "\[Rule]", "\<\"Radio Galaxy\"\>"}], 
+     ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"rG\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "134217728"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", "\[Rule]", "\<\"HII Galaxy\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"H2G\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "117440512"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Low Surface Brightness Galaxy\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"LSB\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "100663296"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Possible Active Galaxy Nucleus\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"AG?\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "96993280"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", "\[Rule]", "\<\"Possible Quasar\"\>"}],
+      ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"Q?\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "94896128"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", "\[Rule]", "\<\"Possible Blazar\"\>"}],
+      ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"Bz?\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "91750400"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", "\[Rule]", "\<\"Possible BL Lac\"\>"}],
+      ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"BL?\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "83886080"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Emission-line galaxy\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"EmG\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "67108864"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Starburst Galaxy\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"SBG\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "50331648"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Blue compact Galaxy\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"bCG\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "33554432"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Gravitationally Lensed Image\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"LeI\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "33030144"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Gravitationally Lensed Image of a Galaxy\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"LeG\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "29884416"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Gravitationally Lensed Image of a Quasar\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"LeQ\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "16777216"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Active Galaxy Nucleus\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"AGN\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "16252928"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"LINER-type Active Galaxy Nucleus\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"LIN\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "15728640"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", "\[Rule]", "\<\"Seyfert Galaxy\"\>"}], 
+     ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"SyG\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "15695872"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Seyfert 1 Galaxy\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"Sy1\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "15663104"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Seyfert 2 Galaxy\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"Sy2\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "15204352"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", "\[Rule]", "\<\"Blazar\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"Bla\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "15171584"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"BL Lac - type object\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"BLL\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "15138816"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Optically Violently Variable object\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"OVV\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "14680064"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", "\[Rule]", "\<\"Quasar\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"QSO\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "1677721600"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Gravitational Wave Event\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"GWE\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "1400373248"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Hot subdwarf candidate\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"HS?\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "428867584"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", "\[Rule]", "\<\"Hot subdwarf\"\>"}], 
+     ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"HS*\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"otype\"\>", "\[Rule]", 
+      RowBox[{"-", "2147483648"}]}], ",", 
+     RowBox[{"\<\"otype_longname\"\>", 
+      "\[Rule]", "\<\"Not an object (error, artefact, ...)\"\>"}], ",", 
+     RowBox[{"\<\"otype_shortname\"\>", "\[Rule]", "\<\"err\"\>"}]}], 
+    "\[RightAssociation]"}]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.820862395038151*^9, {3.8208625315544643`*^9, 3.820862545436056*^9}, 
+   3.82086258568674*^9},
+ CellLabel->"Out[22]=",ExpressionUUID->"631812b7-dd62-400e-b6cf-bb5ea1836616"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Dataset", "[", "%", "]"}]], "Input",
+ CellChangeTimes->{{3.820862560759445*^9, 3.820862565232318*^9}},
+ CellLabel->"In[23]:=",ExpressionUUID->"a88c9e0d-289b-4437-bf3c-900fe51d196c"],
+
+Cell[BoxData[
+ TagBox[
+  TagBox[
+   DynamicModuleBox[{TypeSystem`NestedGrid`PackagePrivate`$state$$ = 
+    Association["InitialData" -> {
+       Association[
+       "otype" -> 0, "otype_longname" -> "Object of unknown nature", 
+        "otype_shortname" -> "?"], 
+       Association[
+       "otype" -> 33554432, "otype_longname" -> "transient event", 
+        "otype_shortname" -> "ev"], 
+       Association[
+       "otype" -> 268435456, "otype_longname" -> "Radio-source", 
+        "otype_shortname" -> "Rad"], 
+       Association[
+       "otype" -> 301989888, "otype_longname" -> "metric Radio-source", 
+        "otype_shortname" -> "mR"], 
+       Association[
+       "otype" -> 335544320, "otype_longname" -> "centimetric Radio-source", 
+        "otype_shortname" -> "cm"], 
+       Association[
+       "otype" -> 369098752, "otype_longname" -> "millimetric Radio-source", 
+        "otype_shortname" -> "mm"], 
+       Association[
+       "otype" -> 402653184, "otype_longname" -> "sub-millimetric source", 
+        "otype_shortname" -> "smm"], 
+       Association[
+       "otype" -> 452984832, "otype_longname" -> "HI (21cm) source", 
+        "otype_shortname" -> "HI"], 
+       Association[
+       "otype" -> 469762048, "otype_longname" -> "radio Burst", 
+        "otype_shortname" -> "rB"], 
+       Association[
+       "otype" -> 503316480, "otype_longname" -> "Maser", "otype_shortname" -> 
+        "Mas"], 
+       Association[
+       "otype" -> 536870912, "otype_longname" -> "Infra-Red source", 
+        "otype_shortname" -> "IR"], 
+       Association[
+       "otype" -> 570425344, "otype_longname" -> 
+        "Far-IR source  (\\lambda >= 30 {\\mu}m)", "otype_shortname" -> 
+        "FIR"], 
+       Association[
+       "otype" -> 603979776, "otype_longname" -> 
+        "Near-IR source (\\lambda < 10 {\\mu}m)", "otype_shortname" -> "NIR"], 
+       Association[
+       "otype" -> 805306368, "otype_longname" -> "Very red source", 
+        "otype_shortname" -> "red"], 
+       Association[
+       "otype" -> 855638016, "otype_longname" -> "Extremely Red Object", 
+        "otype_shortname" -> "ERO"], 
+       Association[
+       "otype" -> 1073741824, "otype_longname" -> "Blue object", 
+        "otype_shortname" -> "blu"], 
+       Association[
+       "otype" -> 1342177280, "otype_longname" -> "UV-emission source", 
+        "otype_shortname" -> "UV"], 
+       Association[
+       "otype" -> 1610612736, "otype_longname" -> "X-ray source", 
+        "otype_shortname" -> "X"], 
+       Association[
+       "otype" -> 1644167168, "otype_longname" -> 
+        "Ultra-luminous X-ray candidate", "otype_shortname" -> "UX?"], 
+       Association[
+       "otype" -> 1778384896, "otype_longname" -> 
+        "Ultra-luminous X-ray source", "otype_shortname" -> "ULX"], 
+       Association[
+       "otype" -> 1879048192, "otype_longname" -> "gamma-ray source", 
+        "otype_shortname" -> "gam"], 
+       Association[
+       "otype" -> 1929379840, "otype_longname" -> "gamma-ray Burst", 
+        "otype_shortname" -> "gB"], 
+       Association[
+       "otype" -> -1879048192, "otype_longname" -> "Gravitational Source", 
+        "otype_shortname" -> "grv"], 
+       Association[
+       "otype" -> -1828716544, "otype_longname" -> "(Micro)Lensing Event", 
+        "otype_shortname" -> "Lev"], 
+       Association[
+       "otype" -> -1778384896, "otype_longname" -> 
+        "Possible gravitational lens System", "otype_shortname" -> "LS?"], 
+       Association[
+       "otype" -> -1761607680, "otype_longname" -> 
+        "Possible gravitational lens", "otype_shortname" -> "Le?"], 
+       Association[
+       "otype" -> -1744830464, "otype_longname" -> 
+        "Possible gravitationally lensed image", "otype_shortname" -> "LI?"], 
+       
+       Association[
+       "otype" -> -1728053248, "otype_longname" -> "Gravitational Lens", 
+        "otype_shortname" -> "gLe"], 
+       Association[
+       "otype" -> -1694498816, "otype_longname" -> 
+        "Gravitational Lens System (lens+images)", "otype_shortname" -> 
+        "gLS"], 
+       Association[
+       "otype" -> -1610612736, "otype_longname" -> "Candidate objects", 
+        "otype_shortname" -> "..?"], 
+       Association[
+       "otype" -> -1593835520, "otype_longname" -> "Possible Galaxy", 
+        "otype_shortname" -> "G?"], 
+       Association[
+       "otype" -> -1577058304, "otype_longname" -> 
+        "Possible Supercluster of Galaxies", "otype_shortname" -> "SC?"], 
+       Association[
+       "otype" -> -1560281088, "otype_longname" -> 
+        "Possible Cluster of Galaxies", "otype_shortname" -> "C?G"], 
+       Association[
+       "otype" -> -1543503872, "otype_longname" -> 
+        "Possible Group of Galaxies", "otype_shortname" -> "Gr?"], 
+       Association[
+       "otype" -> -1426063360, "otype_longname" -> 
+        "Physical Binary Candidate", "otype_shortname" -> "**?"], 
+       Association[
+       "otype" -> -1425539072, "otype_longname" -> 
+        "Eclipsing Binary Candidate", "otype_shortname" -> "EB?"], 
+       Association[
+       "otype" -> -1420820480, "otype_longname" -> "Symbiotic Star Candidate",
+         "otype_shortname" -> "Sy?"], 
+       Association[
+       "otype" -> -1420296192, "otype_longname" -> 
+        "Cataclysmic Binary Candidate", "otype_shortname" -> "CV?"], 
+       Association[
+       "otype" -> -1420099584, "otype_longname" -> "Nova Candidate", 
+        "otype_shortname" -> "No?"], 
+       Association[
+       "otype" -> -1419771904, "otype_longname" -> "X-ray binary Candidate", 
+        "otype_shortname" -> "XB?"], 
+       Association[
+       "otype" -> -1419706368, "otype_longname" -> 
+        "Low-Mass X-ray binary Candidate", "otype_shortname" -> "LX?"], 
+       Association[
+       "otype" -> -1419673600, "otype_longname" -> 
+        "High-Mass X-ray binary Candidate", "otype_shortname" -> "HX?"], 
+       Association[
+       "otype" -> -1409286144, "otype_longname" -> "Possible Peculiar Star", 
+        "otype_shortname" -> "Pec?"], 
+       Association[
+       "otype" -> -1408761856, "otype_longname" -> 
+        "Young Stellar Object Candidate", "otype_shortname" -> "Y*?"], 
+       Association[
+       "otype" -> -1408237568, "otype_longname" -> 
+        "Pre-main sequence Star Candidate", "otype_shortname" -> "pr?"], 
+       Association[
+       "otype" -> -1408139264, "otype_longname" -> "T Tau star Candidate", 
+        "otype_shortname" -> "TT?"], 
+       Association[
+       "otype" -> -1407713280, "otype_longname" -> "Possible Carbon Star", 
+        "otype_shortname" -> "C*?"], 
+       Association[
+       "otype" -> -1407188992, "otype_longname" -> "Possible S Star", 
+        "otype_shortname" -> "S*?"], 
+       Association[
+       "otype" -> -1406664704, "otype_longname" -> 
+        "Possible Star with envelope of OH/IR type", "otype_shortname" -> 
+        "OH?"], 
+       Association[
+       "otype" -> -1406140416, "otype_longname" -> 
+        "Possible Star with envelope of CH type", "otype_shortname" -> "CH?"], 
+       Association[
+       "otype" -> -1405616128, "otype_longname" -> "Possible Wolf-Rayet Star",
+         "otype_shortname" -> "WR?"], 
+       Association[
+       "otype" -> -1405091840, "otype_longname" -> "Possible Be Star", 
+        "otype_shortname" -> "Be?"], 
+       Association[
+       "otype" -> -1404567552, "otype_longname" -> 
+        "Possible Herbig Ae/Be Star", "otype_shortname" -> "Ae?"], 
+       Association[
+       "otype" -> -1403518976, "otype_longname" -> 
+        "Possible Horizontal Branch Star", "otype_shortname" -> "HB?"], 
+       Association[
+       "otype" -> -1403453440, "otype_longname" -> 
+        "Possible Star of RR Lyr type", "otype_shortname" -> "RR?"], 
+       Association[
+       "otype" -> -1403420672, "otype_longname" -> "Possible Cepheid", 
+        "otype_shortname" -> "Ce?"], 
+       Association[
+       "otype" -> -1402994688, "otype_longname" -> 
+        "Possible Red Giant Branch star", "otype_shortname" -> "RB?"], 
+       Association[
+       "otype" -> -1402470400, "otype_longname" -> "Possible Supergiant star",
+         "otype_shortname" -> "sg?"], 
+       Association[
+       "otype" -> -1402372096, "otype_longname" -> 
+        "Possible Red supergiant star", "otype_shortname" -> "s?r"], 
+       Association[
+       "otype" -> -1402339328, "otype_longname" -> 
+        "Possible Yellow supergiant star", "otype_shortname" -> "s?y"], 
+       Association[
+       "otype" -> -1402306560, "otype_longname" -> 
+        "Possible Blue supergiant star", "otype_shortname" -> "s?b"], 
+       Association[
+       "otype" -> -1401946112, "otype_longname" -> 
+        "Asymptotic Giant Branch Star candidate", "otype_shortname" -> "AB?"], 
+       Association[
+       "otype" -> -1401913344, "otype_longname" -> 
+        "Long Period Variable candidate", "otype_shortname" -> "LP?"], 
+       Association[
+       "otype" -> -1401880576, "otype_longname" -> "Mira candidate", 
+        "otype_shortname" -> "Mi?"], 
+       Association[
+       "otype" -> -1401847808, "otype_longname" -> 
+        "Semi-regular variable candidate", "otype_shortname" -> "sv?"], 
+       Association[
+       "otype" -> -1401421824, "otype_longname" -> "Post-AGB Star Candidate", 
+        "otype_shortname" -> "pA?"], 
+       Association[
+       "otype" -> -1400897536, "otype_longname" -> 
+        "Candidate blue Straggler Star", "otype_shortname" -> "BS?"], 
+       Association[
+       "otype" -> -1399848960, "otype_longname" -> "White Dwarf Candidate", 
+        "otype_shortname" -> "WD?"], 
+       Association[
+       "otype" -> -1398800384, "otype_longname" -> "Neutron Star Candidate", 
+        "otype_shortname" -> "N*?"], 
+       Association[
+       "otype" -> -1397751808, "otype_longname" -> "Black Hole Candidate", 
+        "otype_shortname" -> "BH?"], 
+       Association[
+       "otype" -> -1397227520, "otype_longname" -> "SuperNova Candidate", 
+        "otype_shortname" -> "SN?"], 
+       Association[
+       "otype" -> -1396703232, "otype_longname" -> "Low-mass star candidate", 
+        "otype_shortname" -> "LM?"], 
+       Association[
+       "otype" -> -1395654656, "otype_longname" -> "Brown Dwarf Candidate", 
+        "otype_shortname" -> "BD?"], 
+       Association[
+       "otype" -> -1073741824, "otype_longname" -> "Composite object", 
+        "otype_shortname" -> "mul"], 
+       Association[
+       "otype" -> -1056964608, "otype_longname" -> 
+        "Region defined in the sky", "otype_shortname" -> "reg"], 
+       Association[
+       "otype" -> -1054343168, "otype_longname" -> 
+        "Underdense region of the Universe", "otype_shortname" -> "vid"], 
+       Association[
+       "otype" -> -1040187392, "otype_longname" -> "Supercluster of Galaxies",
+         "otype_shortname" -> "SCG"], 
+       Association[
+       "otype" -> -1023410176, "otype_longname" -> "Cluster of Galaxies", 
+        "otype_shortname" -> "ClG"], 
+       Association[
+       "otype" -> -1006632960, "otype_longname" -> "Group of Galaxies", 
+        "otype_shortname" -> "GrG"], 
+       Association[
+       "otype" -> -1004011520, "otype_longname" -> 
+        "Compact Group of Galaxies", "otype_shortname" -> "CGG"], 
+       Association[
+       "otype" -> -989855744, "otype_longname" -> "Pair of Galaxies", 
+        "otype_shortname" -> "PaG"], 
+       Association[
+       "otype" -> -987234304, "otype_longname" -> "Interacting Galaxies", 
+        "otype_shortname" -> "IG"], 
+       Association[
+       "otype" -> -922746880, "otype_longname" -> 
+        "Possible (open) star cluster", "otype_shortname" -> "C?*"], 
+       Association[
+       "otype" -> -905969664, "otype_longname" -> "Possible Globular Cluster",
+         "otype_shortname" -> "Gl?"], 
+       Association[
+       "otype" -> -889192448, "otype_longname" -> "Cluster of Stars", 
+        "otype_shortname" -> "Cl*"], 
+       Association[
+       "otype" -> -888668160, "otype_longname" -> "Globular Cluster", 
+        "otype_shortname" -> "GlC"], 
+       Association[
+       "otype" -> -888143872, "otype_longname" -> "Open (galactic) Cluster", 
+        "otype_shortname" -> "OpC"], 
+       Association[
+       "otype" -> -872415232, "otype_longname" -> "Association of Stars", 
+        "otype_shortname" -> "As*"], 
+       Association[
+       "otype" -> -871890944, "otype_longname" -> "Stellar Stream", 
+        "otype_shortname" -> "St*"], 
+       Association[
+       "otype" -> -871366656, "otype_longname" -> "Moving Group", 
+        "otype_shortname" -> "MGr"], 
+       Association[
+       "otype" -> -855638016, "otype_longname" -> "Double or multiple star", 
+        "otype_shortname" -> "**"], 
+       Association[
+       "otype" -> -855113728, "otype_longname" -> "Eclipsing binary", 
+        "otype_shortname" -> "EB*"], 
+       Association[
+       "otype" -> -855080960, "otype_longname" -> 
+        "Eclipsing binary of Algol type (detached)", "otype_shortname" -> 
+        "Al*"], 
+       Association[
+       "otype" -> -855048192, "otype_longname" -> 
+        "Eclipsing binary of beta Lyr type (semi-detached)", 
+        "otype_shortname" -> "bL*"], 
+       Association[
+       "otype" -> -855015424, "otype_longname" -> 
+        "Eclipsing binary of W UMa type (contact binary)", "otype_shortname" -> 
+        "WU*"], 
+       Association[
+       "otype" -> -854851584, "otype_longname" -> 
+        "Star showing eclipses by its planet", "otype_shortname" -> "EP*"], 
+       Association[
+       "otype" -> -854589440, "otype_longname" -> "Spectroscopic binary", 
+        "otype_shortname" -> "SB*"], 
+       Association[
+       "otype" -> -853016576, "otype_longname" -> "Ellipsoidal variable Star",
+         "otype_shortname" -> "El*"], 
+       Association[
+       "otype" -> -850395136, "otype_longname" -> "Symbiotic Star", 
+        "otype_shortname" -> "Sy*"], 
+       Association[
+       "otype" -> -849870848, "otype_longname" -> "Cataclysmic Variable Star",
+         "otype_shortname" -> "CV*"], 
+       Association[
+       "otype" -> -849805312, "otype_longname" -> 
+        "CV DQ Her type (intermediate polar)", "otype_shortname" -> "DQ*"], 
+       Association[
+       "otype" -> -849772544, "otype_longname" -> "CV of AM Her type (polar)",
+         "otype_shortname" -> "AM*"], 
+       Association[
+       "otype" -> -849707008, "otype_longname" -> "Nova-like Star", 
+        "otype_shortname" -> "NL*"], 
+       Association[
+       "otype" -> -849674240, "otype_longname" -> "Nova", "otype_shortname" -> 
+        "No*"], 
+       Association[
+       "otype" -> -849641472, "otype_longname" -> "Dwarf Nova", 
+        "otype_shortname" -> "DN*"], 
+       Association[
+       "otype" -> -849346560, "otype_longname" -> "X-ray Binary", 
+        "otype_shortname" -> "XB*"], 
+       Association[
+       "otype" -> -849281024, "otype_longname" -> "Low Mass X-ray Binary", 
+        "otype_shortname" -> "LXB"], 
+       Association[
+       "otype" -> -849248256, "otype_longname" -> "High Mass X-ray Binary", 
+        "otype_shortname" -> "HXB"], 
+       Association[
+       "otype" -> -805306368, "otype_longname" -> "Interstellar matter", 
+        "otype_shortname" -> "ISM"], 
+       Association[
+       "otype" -> -788529152, "otype_longname" -> "Part of Cloud", 
+        "otype_shortname" -> "PoC"], 
+       Association[
+       "otype" -> -771751936, "otype_longname" -> "Possible Planetary Nebula",
+         "otype_shortname" -> "PN?"], 
+       Association[
+       "otype" -> -754974720, "otype_longname" -> "Cometary Globule", 
+        "otype_shortname" -> "CGb"], 
+       Association[
+       "otype" -> -738197504, "otype_longname" -> "Bubble", "otype_shortname" -> 
+        "bub"], 
+       Association[
+       "otype" -> -704643072, "otype_longname" -> "Emission Object", 
+        "otype_shortname" -> "EmO"], 
+       Association[
+       "otype" -> -671088640, "otype_longname" -> "Cloud", "otype_shortname" -> 
+        "Cld"], 
+       Association[
+       "otype" -> -669515776, "otype_longname" -> "Galactic Nebula", 
+        "otype_shortname" -> "GNe"], 
+       Association[
+       "otype" -> -668991488, "otype_longname" -> "Bright Nebula", 
+        "otype_shortname" -> "BNe"], 
+       Association[
+       "otype" -> -667942912, "otype_longname" -> "Dark Cloud (nebula)", 
+        "otype_shortname" -> "DNe"], 
+       Association[
+       "otype" -> -667418624, "otype_longname" -> "Reflection Nebula", 
+        "otype_shortname" -> "RNe"], 
+       Association[
+       "otype" -> -664797184, "otype_longname" -> "Molecular Cloud", 
+        "otype_shortname" -> "MoC"], 
+       Association[
+       "otype" -> -664698880, "otype_longname" -> 
+        "Globule (low-mass dark cloud)", "otype_shortname" -> "glb"], 
+       Association[
+       "otype" -> -664600576, "otype_longname" -> "Dense core", 
+        "otype_shortname" -> "cor"], 
+       Association[
+       "otype" -> -664535040, "otype_longname" -> "Star forming region", 
+        "otype_shortname" -> "SFR"], 
+       Association[
+       "otype" -> -664272896, "otype_longname" -> "High-velocity Cloud", 
+        "otype_shortname" -> "HVC"], 
+       Association[
+       "otype" -> -654311424, "otype_longname" -> "HII (ionized) region", 
+        "otype_shortname" -> "HII"], 
+       Association[
+       "otype" -> -637534208, "otype_longname" -> "Planetary Nebula", 
+        "otype_shortname" -> "PN"], 
+       Association[
+       "otype" -> -620756992, "otype_longname" -> "HI shell", 
+        "otype_shortname" -> "sh"], 
+       Association[
+       "otype" -> -603979776, "otype_longname" -> 
+        "SuperNova Remnant Candidate", "otype_shortname" -> "SR?"], 
+       Association[
+       "otype" -> -587202560, "otype_longname" -> "SuperNova Remnant", 
+        "otype_shortname" -> "SNR"], 
+       Association[
+       "otype" -> -570425344, "otype_longname" -> "CircumStellar matter", 
+        "otype_shortname" -> "cir"], 
+       Association[
+       "otype" -> -569901056, "otype_longname" -> "Outflow candidate", 
+        "otype_shortname" -> "of?"], 
+       Association[
+       "otype" -> -562561024, "otype_longname" -> "Outflow", 
+        "otype_shortname" -> "out"], 
+       Association[
+       "otype" -> -562036736, "otype_longname" -> "Herbig-Haro Object", 
+        "otype_shortname" -> "HH"], 
+       Association[
+       "otype" -> -536870912, "otype_longname" -> "Star", "otype_shortname" -> 
+        "*"], 
+       Association[
+       "otype" -> -520093696, "otype_longname" -> "Star in Cluster", 
+        "otype_shortname" -> "*iC"], 
+       Association[
+       "otype" -> -503316480, "otype_longname" -> "Star in Nebula", 
+        "otype_shortname" -> "*iN"], 
+       Association[
+       "otype" -> -486539264, "otype_longname" -> "Star in Association", 
+        "otype_shortname" -> "*iA"], 
+       Association[
+       "otype" -> -469762048, "otype_longname" -> "Star in double system", 
+        "otype_shortname" -> "*i*"], 
+       Association[
+       "otype" -> -452984832, "otype_longname" -> 
+        "Star suspected of Variability", "otype_shortname" -> "V*?"], 
+       Association[
+       "otype" -> -436207616, "otype_longname" -> "Peculiar Star", 
+        "otype_shortname" -> "Pe*"], 
+       Association[
+       "otype" -> -435683328, "otype_longname" -> "Horizontal Branch Star", 
+        "otype_shortname" -> "HB*"], 
+       Association[
+       "otype" -> -435159040, "otype_longname" -> "Young Stellar Object", 
+        "otype_shortname" -> "Y*O"], 
+       Association[
+       "otype" -> -435027968, "otype_longname" -> "Herbig Ae/Be star", 
+        "otype_shortname" -> "Ae*"], 
+       Association[
+       "otype" -> -433586176, "otype_longname" -> "Emission-line Star", 
+        "otype_shortname" -> "Em*"], 
+       Association[
+       "otype" -> -433487872, "otype_longname" -> "Be Star", 
+        "otype_shortname" -> "Be*"], 
+       Association[
+       "otype" -> -433061888, "otype_longname" -> "Blue Straggler Star", 
+        "otype_shortname" -> "BS*"], 
+       Association[
+       "otype" -> -430964736, "otype_longname" -> "Red Giant Branch star", 
+        "otype_shortname" -> "RG*"], 
+       Association[
+       "otype" -> -429916160, "otype_longname" -> 
+        "Asymptotic Giant Branch Star (He-burning)", "otype_shortname" -> 
+        "AB*"], 
+       Association[
+       "otype" -> -429817856, "otype_longname" -> "Carbon Star", 
+        "otype_shortname" -> "C*"], 
+       Association[
+       "otype" -> -429719552, "otype_longname" -> "S Star", "otype_shortname" -> 
+        "S*"], 
+       Association[
+       "otype" -> -429391872, "otype_longname" -> "Evolved supergiant star", 
+        "otype_shortname" -> "sg*"], 
+       Association[
+       "otype" -> -429293568, "otype_longname" -> "Red supergiant star", 
+        "otype_shortname" -> "s*r"], 
+       Association[
+       "otype" -> -429260800, "otype_longname" -> "Yellow supergiant star", 
+        "otype_shortname" -> "s*y"], 
+       Association[
+       "otype" -> -429228032, "otype_longname" -> "Blue supergiant star", 
+        "otype_shortname" -> "s*b"], 
+       Association[
+       "otype" -> -428343296, "otype_longname" -> "Post-AGB Star (proto-PN)", 
+        "otype_shortname" -> "pA*"], 
+       Association[
+       "otype" -> -427819008, "otype_longname" -> "White Dwarf", 
+        "otype_shortname" -> "WD*"], 
+       Association[
+       "otype" -> -427786240, "otype_longname" -> "Pulsating White Dwarf", 
+        "otype_shortname" -> "ZZ*"], 
+       Association[
+       "otype" -> -427294720, "otype_longname" -> 
+        "Low-mass star (M<1solMass)", "otype_shortname" -> "LM*"], 
+       Association[
+       "otype" -> -426770432, "otype_longname" -> 
+        "Brown Dwarf (M<0.08solMass)", "otype_shortname" -> "BD*"], 
+       Association[
+       "otype" -> -426246144, "otype_longname" -> "Confirmed Neutron Star", 
+        "otype_shortname" -> "N*"], 
+       Association[
+       "otype" -> -424148992, "otype_longname" -> "OH/IR star", 
+        "otype_shortname" -> "OH*"], 
+       Association[
+       "otype" -> -423624704, "otype_longname" -> 
+        "Star with envelope of CH type", "otype_shortname" -> "CH*"], 
+       Association[
+       "otype" -> -423100416, "otype_longname" -> "Pre-main sequence Star", 
+        "otype_shortname" -> "pr*"], 
+       Association[
+       "otype" -> -423002112, "otype_longname" -> "T Tau-type Star", 
+        "otype_shortname" -> "TT*"], 
+       Association[
+       "otype" -> -420478976, "otype_longname" -> "Wolf-Rayet Star", 
+        "otype_shortname" -> "WR*"], 
+       Association[
+       "otype" -> -419430400, "otype_longname" -> "High proper-motion Star", 
+        "otype_shortname" -> "PM*"], 
+       Association[
+       "otype" -> -402653184, "otype_longname" -> "High-velocity Star", 
+        "otype_shortname" -> "HV*"], 
+       Association[
+       "otype" -> -385875968, "otype_longname" -> "Variable Star", 
+        "otype_shortname" -> "V*"], 
+       Association[
+       "otype" -> -385351680, "otype_longname" -> 
+        "Variable Star of irregular type", "otype_shortname" -> "Ir*"], 
+       Association[
+       "otype" -> -385318912, "otype_longname" -> 
+        "Variable Star of Orion Type", "otype_shortname" -> "Or*"], 
+       Association[
+       "otype" -> -385286144, "otype_longname" -> 
+        "Variable Star with rapid variations", "otype_shortname" -> "RI*"], 
+       Association[
+       "otype" -> -384303104, "otype_longname" -> "Eruptive variable Star", 
+        "otype_shortname" -> "Er*"], 
+       Association[
+       "otype" -> -384270336, "otype_longname" -> "Flare Star", 
+        "otype_shortname" -> "Fl*"], 
+       Association[
+       "otype" -> -384237568, "otype_longname" -> 
+        "Variable Star of FU Ori type", "otype_shortname" -> "FU*"], 
+       Association[
+       "otype" -> -384172032, "otype_longname" -> 
+        "Variable Star of R CrB type", "otype_shortname" -> "RC*"], 
+       Association[
+       "otype" -> -384139264, "otype_longname" -> 
+        "Variable Star of R CrB type candiate", "otype_shortname" -> "RC?"], 
+       Association[
+       "otype" -> -383778816, "otype_longname" -> 
+        "Rotationally variable Star", "otype_shortname" -> "Ro*"], 
+       Association[
+       "otype" -> -383746048, "otype_longname" -> 
+        "Variable Star of alpha2 CVn type", "otype_shortname" -> "a2*"], 
+       Association[
+       "otype" -> -383680512, "otype_longname" -> "Pulsar", "otype_shortname" -> 
+        "Psr"], 
+       Association[
+       "otype" -> -383647744, "otype_longname" -> "Variable of BY Dra type", 
+        "otype_shortname" -> "BY*"], 
+       Association[
+       "otype" -> -383614976, "otype_longname" -> "Variable of RS CVn type", 
+        "otype_shortname" -> "RS*"], 
+       Association[
+       "otype" -> -383254528, "otype_longname" -> "Pulsating variable Star", 
+        "otype_shortname" -> "Pu*"], 
+       Association[
+       "otype" -> -383188992, "otype_longname" -> 
+        "Variable Star of RR Lyr type", "otype_shortname" -> "RR*"], 
+       Association[
+       "otype" -> -383156224, "otype_longname" -> "Cepheid variable Star", 
+        "otype_shortname" -> "Ce*"], 
+       Association[
+       "otype" -> -383090688, "otype_longname" -> 
+        "Variable Star of delta Sct type", "otype_shortname" -> "dS*"], 
+       Association[
+       "otype" -> -383057920, "otype_longname" -> 
+        "Variable Star of RV Tau type", "otype_shortname" -> "RV*"], 
+       Association[
+       "otype" -> -383025152, "otype_longname" -> 
+        "Variable Star of W Vir type", "otype_shortname" -> "WV*"], 
+       Association[
+       "otype" -> -382992384, "otype_longname" -> 
+        "Variable Star of beta Cep type", "otype_shortname" -> "bC*"], 
+       Association[
+       "otype" -> -382959616, "otype_longname" -> 
+        "Classical Cepheid (delta Cep type)", "otype_shortname" -> "cC*"], 
+       Association[
+       "otype" -> -382926848, "otype_longname" -> 
+        "Variable Star of gamma Dor type", "otype_shortname" -> "gD*"], 
+       Association[
+       "otype" -> -382894080, "otype_longname" -> 
+        "Variable Star of SX Phe type (subdwarf)", "otype_shortname" -> 
+        "SX*"], 
+       Association[
+       "otype" -> -382730240, "otype_longname" -> "Long-period variable star",
+         "otype_shortname" -> "LP*"], 
+       Association[
+       "otype" -> -382697472, "otype_longname" -> 
+        "Variable Star of Mira Cet type", "otype_shortname" -> "Mi*"], 
+       Association[
+       "otype" -> -382599168, "otype_longname" -> 
+        "Semi-regular pulsating Star", "otype_shortname" -> "sr*"], 
+       Association[
+       "otype" -> -381681664, "otype_longname" -> "SuperNova", 
+        "otype_shortname" -> "SN*"], 
+       Association[
+       "otype" -> -301989888, "otype_longname" -> "Sub-stellar object", 
+        "otype_shortname" -> "su*"], 
+       Association[
+       "otype" -> -300941312, "otype_longname" -> 
+        "Extra-solar Planet Candidate", "otype_shortname" -> "Pl?"], 
+       Association[
+       "otype" -> -296747008, "otype_longname" -> 
+        "Extra-solar Confirmed Planet", "otype_shortname" -> "Pl"], 
+       Association[
+       "otype" -> -268435456, "otype_longname" -> "Galaxy", "otype_shortname" -> 
+        "G"], 
+       Association[
+       "otype" -> -251658240, "otype_longname" -> "Part of a Galaxy", 
+        "otype_shortname" -> "PoG"], 
+       Association[
+       "otype" -> -234881024, "otype_longname" -> 
+        "Galaxy in Cluster of Galaxies", "otype_shortname" -> "GiC"], 
+       Association[
+       "otype" -> -233832448, "otype_longname" -> 
+        "Brightest galaxy in a Cluster (BCG)", "otype_shortname" -> "BiC"], 
+       Association[
+       "otype" -> -218103808, "otype_longname" -> 
+        "Galaxy in Group of Galaxies", "otype_shortname" -> "GiG"], 
+       Association[
+       "otype" -> -201326592, "otype_longname" -> 
+        "Galaxy in Pair of Galaxies", "otype_shortname" -> "GiP"], 
+       Association[
+       "otype" -> -184549376, "otype_longname" -> "Galaxy with high redshift",
+         "otype_shortname" -> "HzG"], 
+       Association[
+       "otype" -> -167772160, "otype_longname" -> "Absorption Line system", 
+        "otype_shortname" -> "ALS"], 
+       Association[
+       "otype" -> -167247872, "otype_longname" -> 
+        "Ly alpha Absorption Line system", "otype_shortname" -> "LyA"], 
+       Association[
+       "otype" -> -166723584, "otype_longname" -> 
+        "Damped Ly-alpha Absorption Line system", "otype_shortname" -> "DLA"], 
+       Association[
+       "otype" -> -166199296, "otype_longname" -> 
+        "metallic Absorption Line system", "otype_shortname" -> "mAL"], 
+       Association[
+       "otype" -> -165150720, "otype_longname" -> "Lyman limit system", 
+        "otype_shortname" -> "LLS"], 
+       Association[
+       "otype" -> -163577856, "otype_longname" -> 
+        "Broad Absorption Line system", "otype_shortname" -> "BAL"], 
+       Association[
+       "otype" -> -150994944, "otype_longname" -> "Radio Galaxy", 
+        "otype_shortname" -> "rG"], 
+       Association[
+       "otype" -> -134217728, "otype_longname" -> "HII Galaxy", 
+        "otype_shortname" -> "H2G"], 
+       Association[
+       "otype" -> -117440512, "otype_longname" -> 
+        "Low Surface Brightness Galaxy", "otype_shortname" -> "LSB"], 
+       Association[
+       "otype" -> -100663296, "otype_longname" -> 
+        "Possible Active Galaxy Nucleus", "otype_shortname" -> "AG?"], 
+       Association[
+       "otype" -> -96993280, "otype_longname" -> "Possible Quasar", 
+        "otype_shortname" -> "Q?"], 
+       Association[
+       "otype" -> -94896128, "otype_longname" -> "Possible Blazar", 
+        "otype_shortname" -> "Bz?"], 
+       Association[
+       "otype" -> -91750400, "otype_longname" -> "Possible BL Lac", 
+        "otype_shortname" -> "BL?"], 
+       Association[
+       "otype" -> -83886080, "otype_longname" -> "Emission-line galaxy", 
+        "otype_shortname" -> "EmG"], 
+       Association[
+       "otype" -> -67108864, "otype_longname" -> "Starburst Galaxy", 
+        "otype_shortname" -> "SBG"], 
+       Association[
+       "otype" -> -50331648, "otype_longname" -> "Blue compact Galaxy", 
+        "otype_shortname" -> "bCG"], 
+       Association[
+       "otype" -> -33554432, "otype_longname" -> 
+        "Gravitationally Lensed Image", "otype_shortname" -> "LeI"], 
+       Association[
+       "otype" -> -33030144, "otype_longname" -> 
+        "Gravitationally Lensed Image of a Galaxy", "otype_shortname" -> 
+        "LeG"], 
+       Association[
+       "otype" -> -29884416, "otype_longname" -> 
+        "Gravitationally Lensed Image of a Quasar", "otype_shortname" -> 
+        "LeQ"], 
+       Association[
+       "otype" -> -16777216, "otype_longname" -> "Active Galaxy Nucleus", 
+        "otype_shortname" -> "AGN"], 
+       Association[
+       "otype" -> -16252928, "otype_longname" -> 
+        "LINER-type Active Galaxy Nucleus", "otype_shortname" -> "LIN"], 
+       Association[
+       "otype" -> -15728640, "otype_longname" -> "Seyfert Galaxy", 
+        "otype_shortname" -> "SyG"], 
+       Association[
+       "otype" -> -15695872, "otype_longname" -> "Seyfert 1 Galaxy", 
+        "otype_shortname" -> "Sy1"], 
+       Association[
+       "otype" -> -15663104, "otype_longname" -> "Seyfert 2 Galaxy", 
+        "otype_shortname" -> "Sy2"], 
+       Association[
+       "otype" -> -15204352, "otype_longname" -> "Blazar", "otype_shortname" -> 
+        "Bla"], 
+       Association[
+       "otype" -> -15171584, "otype_longname" -> "BL Lac - type object", 
+        "otype_shortname" -> "BLL"], 
+       Association[
+       "otype" -> -15138816, "otype_longname" -> 
+        "Optically Violently Variable object", "otype_shortname" -> "OVV"], 
+       Association[
+       "otype" -> -14680064, "otype_longname" -> "Quasar", "otype_shortname" -> 
+        "QSO"], 
+       Association[
+       "otype" -> -1677721600, "otype_longname" -> "Gravitational Wave Event",
+         "otype_shortname" -> "GWE"], 
+       Association[
+       "otype" -> -1400373248, "otype_longname" -> "Hot subdwarf candidate", 
+        "otype_shortname" -> "HS?"], 
+       Association[
+       "otype" -> -428867584, "otype_longname" -> "Hot subdwarf", 
+        "otype_shortname" -> "HS*"], 
+       Association[
+       "otype" -> -2147483648, "otype_longname" -> 
+        "Not an object (error, artefact, ...)", "otype_shortname" -> "err"]}, 
+     "AllowEmbedding" -> True, "InitialShape" -> 
+     TypeSystem`PackageScope`HeaderShape[
+       Association[{All, "otype"} -> 1, {All, "otype_longname"} -> 
+        1, {All, "otype_shortname"} -> 1], 
+       TypeSystem`PackageScope`Limited[
+        TypeSystem`PackageScope`ColumnShape[
+         TypeSystem`PackageScope`Limited[
+          TypeSystem`PackageScope`RowShape[
+           Association[
+           "otype" -> TypeSystem`PackageScope`AtomShape[34], "otype_longname" -> 
+            TypeSystem`PackageScope`AtomShape[336.00000000000006`], 
+            "otype_shortname" -> 
+            TypeSystem`PackageScope`AtomShape[28.800000000000004`]]], 
+          DirectedInfinity[1], 3, {All}]], 20, 
+        DirectedInfinity[1], {}]], "InitialType" -> TypeSystem`Vector[
+       TypeSystem`Struct[{"otype", "otype_longname", "otype_shortname"}, {
+         TypeSystem`Atom[Integer], 
+         TypeSystem`Atom[String], 
+         TypeSystem`Atom[String]}], 237], "Meta" -> Association[], 
+     "RowTarget" -> 20, "ColumnTarget" -> 10, "Shape" -> 
+     TypeSystem`PackageScope`HeaderShape[
+       Association[{All, "otype"} -> 1, {All, "otype_longname"} -> 
+        1, {All, "otype_shortname"} -> 1], 
+       TypeSystem`PackageScope`Limited[
+        TypeSystem`PackageScope`ColumnShape[
+         TypeSystem`PackageScope`Limited[
+          TypeSystem`PackageScope`RowShape[
+           Association[
+           "otype" -> TypeSystem`PackageScope`AtomShape[34], "otype_longname" -> 
+            TypeSystem`PackageScope`AtomShape[336.00000000000006`], 
+            "otype_shortname" -> 
+            TypeSystem`PackageScope`AtomShape[28.800000000000004`]]], 
+          DirectedInfinity[1], 3, {All}]], 20, 
+        DirectedInfinity[1], {}]], "Type" -> TypeSystem`Vector[
+       TypeSystem`Struct[{"otype", "otype_longname", "otype_shortname"}, {
+         TypeSystem`Atom[Integer], 
+         TypeSystem`Atom[String], 
+         TypeSystem`Atom[String]}], 237], "Path" -> {}, "BaseIndices" -> {}, 
+     "DisplayedRowCount" -> 20, "DisplayedColumnCount" -> 3, "DataRowCount" -> 
+     237, "DataColumnCount" -> 3, "SortPaths" -> {}, "SortDirections" -> {}, 
+     "HiddenItemsMap" -> Null, "UpdateType" -> 1], 
+    TypeSystem`NestedGrid`PackagePrivate`$outputID$$, 
+    TypeSystem`NestedGrid`PackagePrivate`$path$$ = {}, 
+    TypeSystem`NestedGrid`PackagePrivate`$vPos$$ = 1, 
+    TypeSystem`NestedGrid`PackagePrivate`$hPos$$ = 1, 
+    TypeSystem`NestedGrid`PackagePrivate`$grid$$ = 
+    DynamicModule[{
+     TypeSystem`NestedGrid`PackagePrivate`renderedGrid = Deploy[
+        Style[
+         Grid[{{
+            Item[
+             Pane[
+              Annotation[
+               EventHandler[
+                MouseAppearance[
+                 Mouseover["otype", 
+                  Style[
+                  "otype", FontColor -> 
+                   RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                If[
+                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{
+                   All, "otype"}, 1]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                All, "otype"}, "ColumnHeader", True], "Mouse"], 
+              ImageSize -> {{1, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+             GrayLevel[0.95], Alignment -> {Left, Baseline}], 
+            Item[
+             Pane[
+              Annotation[
+               EventHandler[
+                MouseAppearance[
+                 Mouseover["otype_longname", 
+                  Style[
+                  "otype_longname", FontColor -> 
+                   RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                If[
+                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{
+                   All, "otype_longname"}, 1]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                All, "otype_longname"}, "ColumnHeader", True], "Mouse"], 
+              ImageSize -> {{1, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+             GrayLevel[0.95], Alignment -> {Left, Baseline}], 
+            Item[
+             Pane[
+              Annotation[
+               EventHandler[
+                MouseAppearance[
+                 Mouseover["otype_shortname", 
+                  Style[
+                  "otype_shortname", FontColor -> 
+                   RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                If[
+                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{
+                   All, "otype_shortname"}, 1]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                All, "otype_shortname"}, "ColumnHeader", True], "Mouse"], 
+              ImageSize -> {{1, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+             GrayLevel[0.95], Alignment -> {Left, Baseline}]}, {
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["0"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{1, 
+                 Key["otype"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation["Object of unknown nature", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{1, 
+                 Key["otype_longname"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{336.00000000000006`, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation["?", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{1, 
+                 Key["otype_shortname"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{28.800000000000004`, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["33554432"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{2, 
+                 Key["otype"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation["transient event", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{2, 
+                 Key["otype_longname"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{336.00000000000006`, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation["ev", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{2, 
+                 Key["otype_shortname"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{28.800000000000004`, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["268435456"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{3, 
+                 Key["otype"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation["Radio-source", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{3, 
+                 Key["otype_longname"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{336.00000000000006`, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation["Rad", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{3, 
+                 Key["otype_shortname"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{28.800000000000004`, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["301989888"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{4, 
+                 Key["otype"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation["metric Radio-source", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{4, 
+                 Key["otype_longname"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{336.00000000000006`, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation["mR", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{4, 
+                 Key["otype_shortname"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{28.800000000000004`, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["335544320"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{5, 
+                 Key["otype"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation["centimetric Radio-source", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{5, 
+                 Key["otype_longname"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{336.00000000000006`, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation["cm", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{5, 
+                 Key["otype_shortname"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{28.800000000000004`, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["369098752"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{6, 
+                 Key["otype"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation["millimetric Radio-source", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{6, 
+                 Key["otype_longname"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{336.00000000000006`, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation["mm", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{6, 
+                 Key["otype_shortname"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{28.800000000000004`, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["402653184"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{7, 
+                 Key["otype"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation["sub-millimetric source", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{7, 
+                 Key["otype_longname"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{336.00000000000006`, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation["smm", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{7, 
+                 Key["otype_shortname"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{28.800000000000004`, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["452984832"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{8, 
+                 Key["otype"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation["HI (21cm) source", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{8, 
+                 Key["otype_longname"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{336.00000000000006`, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation["HI", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{8, 
+                 Key["otype_shortname"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{28.800000000000004`, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["469762048"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{9, 
+                 Key["otype"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation["radio Burst", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{9, 
+                 Key["otype_longname"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{336.00000000000006`, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation["rB", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{9, 
+                 Key["otype_shortname"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{28.800000000000004`, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["503316480"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{10, 
+                 Key["otype"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation["Maser", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{10, 
+                 Key["otype_longname"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{336.00000000000006`, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation["Mas", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{10, 
+                 Key["otype_shortname"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{28.800000000000004`, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["536870912"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{11, 
+                 Key["otype"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation["Infra-Red source", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{11, 
+                 Key["otype_longname"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{336.00000000000006`, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation["IR", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{11, 
+                 Key["otype_shortname"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{28.800000000000004`, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["570425344"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{12, 
+                 Key["otype"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation["Far-IR source  (\\lambda >= 30 {\\mu}m)", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{12, 
+                 Key["otype_longname"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{336.00000000000006`, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation["FIR", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{12, 
+                 Key["otype_shortname"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{28.800000000000004`, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["603979776"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{13, 
+                 Key["otype"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation["Near-IR source (\\lambda < 10 {\\mu}m)", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{13, 
+                 Key["otype_longname"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{336.00000000000006`, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation["NIR", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{13, 
+                 Key["otype_shortname"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{28.800000000000004`, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["805306368"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{14, 
+                 Key["otype"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation["Very red source", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{14, 
+                 Key["otype_longname"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{336.00000000000006`, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation["red", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{14, 
+                 Key["otype_shortname"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{28.800000000000004`, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["855638016"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{15, 
+                 Key["otype"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation["Extremely Red Object", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{15, 
+                 Key["otype_longname"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{336.00000000000006`, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation["ERO", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{15, 
+                 Key["otype_shortname"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{28.800000000000004`, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["1073741824"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{16, 
+                 Key["otype"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation["Blue object", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{16, 
+                 Key["otype_longname"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{336.00000000000006`, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation["blu", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{16, 
+                 Key["otype_shortname"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{28.800000000000004`, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["1342177280"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{17, 
+                 Key["otype"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation["UV-emission source", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{17, 
+                 Key["otype_longname"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{336.00000000000006`, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation["UV", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{17, 
+                 Key["otype_shortname"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{28.800000000000004`, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["1610612736"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{18, 
+                 Key["otype"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation["X-ray source", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{18, 
+                 Key["otype_longname"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{336.00000000000006`, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation["X", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{18, 
+                 Key["otype_shortname"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{28.800000000000004`, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["1644167168"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{19, 
+                 Key["otype"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation["Ultra-luminous X-ray candidate", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{19, 
+                 Key["otype_longname"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{336.00000000000006`, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation["UX?", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{19, 
+                 Key["otype_shortname"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{28.800000000000004`, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["1778384896"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{20, 
+                 Key["otype"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation["Ultra-luminous X-ray source", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{20, 
+                 Key["otype_longname"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{336.00000000000006`, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation["ULX", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{20, 
+                 Key["otype_shortname"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{28.800000000000004`, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Deploy[
+              Pane[
+               Row[{
+                 Spacer[2], 
+                 Style[
+                  Row[{
+                    Button[
+                    MouseAppearance[
+                    Mouseover[
+                    Graphics[{{
+                    EdgeForm[None], 
+                    FaceForm[None], 
+                    Rectangle[{0, 0}, {18, 18}, RoundingRadius -> 2]}, 
+                    Rotate[
+                    Translate[{
+                    CapForm[Round], 
+                    RGBColor[
+                    0.5372549019607843, 0.5372549019607843, 
+                    0.5372549019607843], 
+                    Line[{{0, 0}, {4, 5}, {8, 0}}], 
+                    Line[{{0, 5}, {8, 5}}]}, {5, 6.5}], 0, {9, 9}]}, 
+                    ImageSize -> (1 -> 1), ImagePadding -> {{0, 1}, {1, 0}}, 
+                    BaselinePosition -> Scaled[0.35]], 
+                    Graphics[{{
+                    EdgeForm[
+                    RGBColor[
+                    0.27450980392156865`, 0.5411764705882353, 
+                    0.796078431372549]], 
+                    FaceForm[None], 
+                    Rectangle[{0, 0}, {18, 18}, RoundingRadius -> 2]}, 
+                    Rotate[
+                    Translate[{
+                    CapForm[Round], 
+                    RGBColor[
+                    0.27450980392156865`, 0.5411764705882353, 
+                    0.796078431372549], 
+                    Line[{{0, 0}, {4, 5}, {8, 0}}], 
+                    Line[{{0, 5}, {8, 5}}]}, {5, 6.5}], 0, {9, 9}]}, 
+                    ImageSize -> (1 -> 1), ImagePadding -> {{0, 1}, {1, 0}}, 
+                    BaselinePosition -> Scaled[0.35]]], "LinkHand"], 
+                    If[
+                    TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$ = 
+                    Clip[TypeSystem`NestedGrid`PackagePrivate`$vPos$$ - 20 
+                    If[True, 237, 1], {1, 237 - -20 + 1}]; 
+                    TypeSystem`NestedGrid`PackagePrivate`updateState[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]], True][
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$]], 
+                    Appearance -> None], 
+                    Button[
+                    MouseAppearance[
+                    Mouseover[
+                    Graphics[{{
+                    EdgeForm[None], 
+                    FaceForm[None], 
+                    Rectangle[{0, 0}, {18, 18}, RoundingRadius -> 2]}, 
+                    Rotate[
+                    Translate[{
+                    CapForm[Round], 
+                    RGBColor[
+                    0.5372549019607843, 0.5372549019607843, 
+                    0.5372549019607843], 
+                    Line[{{0, 0}, {4, 5}, {8, 0}}]}, {5, 6.5}], 0, {9, 9}]}, 
+                    ImageSize -> (1 -> 1), ImagePadding -> {{0, 1}, {1, 0}}, 
+                    BaselinePosition -> Scaled[0.35]], 
+                    Graphics[{{
+                    EdgeForm[
+                    RGBColor[
+                    0.27450980392156865`, 0.5411764705882353, 
+                    0.796078431372549]], 
+                    FaceForm[None], 
+                    Rectangle[{0, 0}, {18, 18}, RoundingRadius -> 2]}, 
+                    Rotate[
+                    Translate[{
+                    CapForm[Round], 
+                    RGBColor[
+                    0.27450980392156865`, 0.5411764705882353, 
+                    0.796078431372549], 
+                    Line[{{0, 0}, {4, 5}, {8, 0}}]}, {5, 6.5}], 0, {9, 9}]}, 
+                    ImageSize -> (1 -> 1), ImagePadding -> {{0, 1}, {1, 0}}, 
+                    BaselinePosition -> Scaled[0.35]]], "LinkHand"], 
+                    If[
+                    TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$ = 
+                    Clip[TypeSystem`NestedGrid`PackagePrivate`$vPos$$ - 20 
+                    If[False, 237, 1], {1, 237 - -20 + 1}]; 
+                    TypeSystem`NestedGrid`PackagePrivate`updateState[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]], True][
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$]], 
+                    Appearance -> None], " ", 
+                    Style[
+                    Mouseover[
+                    Row[{"rows ", 1, "\[Dash]", 20, " of ", 
+                    Style[
+                    237, FontColor -> GrayLevel[0], FontWeight -> "Medium"]}, 
+                    BaseStyle -> {
+                    FontSize -> 8., FontColor -> 
+                    RGBColor[
+                    0.5098039215686274, 0.5098039215686274, 
+                    0.5098039215686274]}], 
+                    Row[{"rows ", 1, "\[Dash]", 20, " of ", 
+                    Style[
+                    237, FontColor -> GrayLevel[0], FontWeight -> "Medium"]}, 
+                    BaseStyle -> {
+                    FontSize -> 8., FontColor -> 
+                    RGBColor[
+                    0.5098039215686274, 0.5098039215686274, 
+                    0.5098039215686274]}]], ContextMenu -> {
+                    MenuItem["Hide", 
+                    KernelExecute[
+                    
+                    TypeSystem`NestedGrid`PackagePrivate`adjustLimits[{
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]}, 
+                    "Rows", 1, {}]], MenuEvaluator -> Automatic], 
+                    MenuItem["Show up to 10 Rows", 
+                    KernelExecute[
+                    
+                    TypeSystem`NestedGrid`PackagePrivate`adjustLimits[{
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]}, 
+                    "Rows", 10, {}]], MenuEvaluator -> Automatic], 
+                    MenuItem["Show up to 30 Rows", 
+                    KernelExecute[
+                    
+                    TypeSystem`NestedGrid`PackagePrivate`adjustLimits[{
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]}, 
+                    "Rows", 30, {}]], MenuEvaluator -> Automatic], 
+                    MenuItem["Show up to 100 Rows", 
+                    KernelExecute[
+                    
+                    TypeSystem`NestedGrid`PackagePrivate`adjustLimits[{
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]}, 
+                    "Rows", 100, {}]], MenuEvaluator -> Automatic], 
+                    MenuItem["Show All", 
+                    KernelExecute[
+                    
+                    TypeSystem`NestedGrid`PackagePrivate`adjustLimits[{
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]}, 
+                    "Rows", 100000000, {}]], MenuEvaluator -> Automatic]}], 
+                    " ", 
+                    Button[
+                    MouseAppearance[
+                    Mouseover[
+                    Graphics[{{
+                    EdgeForm[None], 
+                    FaceForm[None], 
+                    Rectangle[{0, 0}, {18, 18}, RoundingRadius -> 2]}, 
+                    Rotate[
+                    Translate[{
+                    CapForm[Round], 
+                    RGBColor[
+                    0.5372549019607843, 0.5372549019607843, 
+                    0.5372549019607843], 
+                    Line[{{0, 0}, {4, 5}, {8, 0}}]}, {5, 6.5}], 180 Degree, {
+                    9, 9}]}, ImageSize -> (1 -> 1), 
+                    ImagePadding -> {{0, 1}, {1, 0}}, BaselinePosition -> 
+                    Scaled[0.35]], 
+                    Graphics[{{
+                    EdgeForm[
+                    RGBColor[
+                    0.27450980392156865`, 0.5411764705882353, 
+                    0.796078431372549]], 
+                    FaceForm[None], 
+                    Rectangle[{0, 0}, {18, 18}, RoundingRadius -> 2]}, 
+                    Rotate[
+                    Translate[{
+                    CapForm[Round], 
+                    RGBColor[
+                    0.27450980392156865`, 0.5411764705882353, 
+                    0.796078431372549], 
+                    Line[{{0, 0}, {4, 5}, {8, 0}}]}, {5, 6.5}], 180 Degree, {
+                    9, 9}]}, ImageSize -> (1 -> 1), 
+                    ImagePadding -> {{0, 1}, {1, 0}}, BaselinePosition -> 
+                    Scaled[0.35]]], "LinkHand"], 
+                    If[
+                    TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$ = 
+                    Clip[TypeSystem`NestedGrid`PackagePrivate`$vPos$$ + 
+                    20 If[False, 237, 1], {1, 237 - 20 + 1}]; 
+                    TypeSystem`NestedGrid`PackagePrivate`updateState[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]], True][
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$]], 
+                    Appearance -> None], 
+                    Button[
+                    MouseAppearance[
+                    Mouseover[
+                    Graphics[{{
+                    EdgeForm[None], 
+                    FaceForm[None], 
+                    Rectangle[{0, 0}, {18, 18}, RoundingRadius -> 2]}, 
+                    Rotate[
+                    Translate[{
+                    CapForm[Round], 
+                    RGBColor[
+                    0.5372549019607843, 0.5372549019607843, 
+                    0.5372549019607843], 
+                    Line[{{0, 0}, {4, 5}, {8, 0}}], 
+                    Line[{{0, 5}, {8, 5}}]}, {5, 6.5}], 180 Degree, {9, 9}]}, 
+                    ImageSize -> (1 -> 1), ImagePadding -> {{0, 1}, {1, 0}}, 
+                    BaselinePosition -> Scaled[0.35]], 
+                    Graphics[{{
+                    EdgeForm[
+                    RGBColor[
+                    0.27450980392156865`, 0.5411764705882353, 
+                    0.796078431372549]], 
+                    FaceForm[None], 
+                    Rectangle[{0, 0}, {18, 18}, RoundingRadius -> 2]}, 
+                    Rotate[
+                    Translate[{
+                    CapForm[Round], 
+                    RGBColor[
+                    0.27450980392156865`, 0.5411764705882353, 
+                    0.796078431372549], 
+                    Line[{{0, 0}, {4, 5}, {8, 0}}], 
+                    Line[{{0, 5}, {8, 5}}]}, {5, 6.5}], 180 Degree, {9, 9}]}, 
+                    ImageSize -> (1 -> 1), ImagePadding -> {{0, 1}, {1, 0}}, 
+                    BaselinePosition -> Scaled[0.35]]], "LinkHand"], 
+                    If[
+                    TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$ = 
+                    Clip[TypeSystem`NestedGrid`PackagePrivate`$vPos$$ + 
+                    20 If[True, 237, 1], {1, 237 - 20 + 1}]; 
+                    TypeSystem`NestedGrid`PackagePrivate`updateState[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]], True][
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$]], 
+                    Appearance -> None]}], ContextMenu -> {}], 
+                 Graphics[{
+                   RGBColor[
+                   0.8196078431372549, 0.8196078431372549, 
+                    0.8196078431372549], 
+                   Line[{{0, 0}, {0, 19}}]}, ImageSize -> (1 -> 1), 
+                  ImagePadding -> {{0, 0}, {0, 0}}, BaselinePosition -> 
+                  Scaled[0.35]]}], ImageMargins -> {{0, -1}, {-1, 1}}]], 
+             Background -> 
+             RGBColor[
+              0.9764705882352941, 0.9764705882352941, 0.9764705882352941], 
+             Alignment -> {Left, Top}], SpanFromLeft, SpanFromLeft}}, 
+          BaseStyle -> {
+           ContextMenu -> 
+            Dynamic[TypeSystem`NestedGrid`PackagePrivate`$contextMenuTrigger; 
+              Which[TypeSystem`NestedGrid`PackagePrivate`$lastOutputID =!= 
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                 TypeSystem`NestedGrid`PackagePrivate`$outputID$$], {}, 
+                TypeSystem`NestedGrid`PackagePrivate`$contextMenuTrigger === 
+                TypeSystem`NestedGrid`PackagePrivate`$lastContextMenuTrigger, 
+                TypeSystem`NestedGrid`PackagePrivate`$lastContextMenu, True, 
+                TypeSystem`NestedGrid`PackagePrivate`$lastContextMenuTrigger = 
+                 TypeSystem`NestedGrid`PackagePrivate`$contextMenuTrigger; 
+                TypeSystem`NestedGrid`PackagePrivate`$lastContextMenu = 
+                 Block[{TypeSystem`NestedGrid`PackagePrivate`$globalScrollPos = \
+{TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$}}, 
+                   
+                   With[{TypeSystem`NestedGrid`PackagePrivate`lastPath$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`lastPathType$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPathType, 
+                    TypeSystem`NestedGrid`PackagePrivate`isLeafHeader$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`$\
+lastPathIsLeafHeader, TypeSystem`NestedGrid`PackagePrivate`headerHidden$ = And[
+                    MatchQ[TypeSystem`NestedGrid`PackagePrivate`$lastPathType, 
+                    Alternatives["RowHeader", "ColumnHeader"]], 
+                    TypeSystem`NestedGrid`PackagePrivate`headerHiddenQ[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$]], 
+                    TypeSystem`NestedGrid`PackagePrivate`allHidden$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`allHiddenQ[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                    TypeSystem`NestedGrid`PackagePrivate`anyHidden$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`anyHiddenQ[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                    TypeSystem`NestedGrid`PackagePrivate`sortDirection$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`columnSortDirection[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$[
+                    "SortPaths"], 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$[
+                    "SortDirections"]], 
+                    TypeSystem`NestedGrid`PackagePrivate`haveData$ = Not[
+                    FailureQ[
+                    TypeSystem`NestedGrid`PackagePrivate`datasetInitialData[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$]]], 
+                    TypeSystem`NestedGrid`PackagePrivate`isKeyDummy$ = Not[
+                    FreeQ[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, Keys]]}, 
+                    Join[{
+                    If[
+                    Or[
+                    Not[TypeSystem`NestedGrid`PackagePrivate`haveData$], 
+                    Not[TypeSystem`NestedGrid`PackagePrivate`anyHidden$], 
+                    TypeSystem`NestedGrid`PackagePrivate`isKeyDummy$], 
+                    Nothing, 
+                    MenuItem[
+                    StringJoin["Show ", 
+                    Which[
+                    TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "Item", "", 
+                    TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "RowHeader", "Row", 
+                    TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "ColumnHeader", "Column", True, ""]], 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`updateHiddenItems[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][
+                    TypeSystem`NestedGrid`PackagePrivate`lastPath$, 
+                    "remove"]], MenuEvaluator -> Automatic]], 
+                    If[
+                    Or[
+                    Not[TypeSystem`NestedGrid`PackagePrivate`haveData$], 
+                    TypeSystem`NestedGrid`PackagePrivate`pathEmptyQ[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                    TypeSystem`NestedGrid`PackagePrivate`isKeyDummy$, 
+                    And[
+                    TypeSystem`NestedGrid`PackagePrivate`allHidden$, 
+                    TypeSystem`NestedGrid`PackagePrivate`headerHidden$]], 
+                    Nothing, 
+                    MenuItem[
+                    StringJoin["Hide ", 
+                    Which[
+                    TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "Item", "", 
+                    TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "RowHeader", "Row", 
+                    TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "ColumnHeader", "Column", True, ""]], 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`updateHiddenItems[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][
+                    TypeSystem`NestedGrid`PackagePrivate`lastPath$, "add"]], 
+                    MenuEvaluator -> Automatic]], Delimiter}, 
+                    If[
+                    And[TypeSystem`NestedGrid`PackagePrivate`haveData$, 
+                    MatchQ[TypeSystem`NestedGrid`PackagePrivate`lastPathType$, 
+                    Alternatives["ColumnHeader", "KeyDummy"]], 
+                    TypeSystem`NestedGrid`PackagePrivate`isLeafHeader$, 
+                    Not[TypeSystem`NestedGrid`PackagePrivate`allHidden$]], {
+                    If[
+                    TypeSystem`NestedGrid`PackagePrivate`sortDirection$ =!= 
+                    "Ascending", 
+                    MenuItem["Sort", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`updateSort[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][
+                    TypeSystem`NestedGrid`PackagePrivate`lastPath$, 
+                    "Ascending"]], MenuEvaluator -> Automatic], Nothing], 
+                    If[TypeSystem`NestedGrid`PackagePrivate`sortDirection$ =!= 
+                    "Descending", 
+                    MenuItem["Reverse Sort", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`updateSort[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][
+                    TypeSystem`NestedGrid`PackagePrivate`lastPath$, 
+                    "Descending"]], MenuEvaluator -> Automatic], Nothing], 
+                    If[
+                    TypeSystem`NestedGrid`PackagePrivate`sortDirection$ =!= 
+                    None, 
+                    MenuItem["Unsort", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`updateSort[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][
+                    TypeSystem`NestedGrid`PackagePrivate`lastPath$, None]], 
+                    MenuEvaluator -> Automatic], Nothing], Delimiter}, {}], {
+                    MenuItem["Copy Position to Clipboard", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`toCurrentPosition[
+                    TypeSystem`NestedGrid`PackagePrivate`copyClip]], 
+                    MenuEvaluator -> Automatic], 
+                    If[TypeSystem`NestedGrid`PackagePrivate`haveData$, 
+                    MenuItem["Copy Data to Clipboard", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`toCurrentData[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`copyClip]], 
+                    MenuEvaluator -> Automatic], Nothing], Delimiter, 
+                    MenuItem["Paste Position in New Cell", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`toCurrentPosition[
+                    TypeSystem`NestedGrid`PackagePrivate`cellPaste]], 
+                    MenuEvaluator -> Automatic], 
+                    If[TypeSystem`NestedGrid`PackagePrivate`haveData$, 
+                    MenuItem["Paste Data in New Cell", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`toCurrentData[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`cellPaste]], 
+                    MenuEvaluator -> Automatic], Nothing]}]]]]], FontFamily -> 
+            "Verdana", FontSize -> 12}, Spacings -> {0, 0}, Alignment -> Left,
+           Dividers -> All, FrameStyle -> GrayLevel[0.7490196078431373], 
+          BaseStyle -> {FontFamily -> "Verdana", FontSize -> 12}], 
+         LineBreakWithin -> False, ContextMenu -> {}, NumberMarks -> False, 
+         ShowAutoStyles -> False]], 
+      TypeSystem`NestedGrid`PackagePrivate`initialQ = True}, 
+     Dynamic[
+      TypeSystem`NestedGrid`PackagePrivate`setupViewPath[
+      TypeSystem`NestedGrid`PackagePrivate`$path$$, If[
+         Not[TypeSystem`NestedGrid`PackagePrivate`initialQ], 
+         Module[{
+          TypeSystem`NestedGrid`PackagePrivate`tmpGrid$ = $Failed, 
+           TypeSystem`NestedGrid`PackagePrivate`tmpData$ = 
+           TypeSystem`NestedGrid`PackagePrivate`datasetData[
+            TypeSystem`NestedGrid`PackagePrivate`$state$$]}, 
+          TypeSystem`NestedGrid`PackagePrivate`tmpGrid$ = If[
+             FailureQ[TypeSystem`NestedGrid`PackagePrivate`tmpData$], 
+             TypeSystem`NestedGrid`PackagePrivate`renderedGrid, 
+             TypeSystem`NestedGrid`PackagePrivate`renderGrid[
+             TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+              TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+              TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+              TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+              TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+              TypeSystem`NestedGrid`PackagePrivate`localHold[
+              TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][
+             TypeSystem`NestedGrid`PackagePrivate`tmpData$]]; If[
+            Not[
+             FailureQ[TypeSystem`NestedGrid`PackagePrivate`tmpGrid$]], 
+            TypeSystem`NestedGrid`PackagePrivate`renderedGrid = 
+            TypeSystem`NestedGrid`PackagePrivate`tmpGrid$]; Null]]; 
+       TypeSystem`NestedGrid`PackagePrivate`initialQ = False; 
+       TypeSystem`NestedGrid`PackagePrivate`$vPos$$; 
+       TypeSystem`NestedGrid`PackagePrivate`$hPos$$; If[
+         FailureQ[TypeSystem`NestedGrid`PackagePrivate`renderedGrid], 
+         TypeSystem`SparseGrid[
+          TypeSystem`H["(data no longer present)"]], 
+         If[GeneralUtilities`$DebugMode, 
+          Row[{TypeSystem`NestedGrid`PackagePrivate`renderedGrid, "  ", 
+            TypeSystem`NestedGrid`PackagePrivate`formatState[
+            TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+             TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+             TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+             TypeSystem`NestedGrid`PackagePrivate`$hPos$$]}], 
+          TypeSystem`NestedGrid`PackagePrivate`renderedGrid]]], 
+      TrackedSymbols :> {
+       TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$hPos$$}], 
+     DynamicModuleValues :> {}], 
+    TypeSystem`NestedGrid`PackagePrivate`$topBar$$ = Dynamic[
+     TypeSystem`NestedGrid`PackagePrivate`makeFramedBar[
+      TypeSystem`PackageScope`SubViewPathbar[
+      TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+       TypeSystem`NestedGrid`PackagePrivate`updateState[
+       TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+        TypeSystem`NestedGrid`PackagePrivate`localHold[
+        TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]]], 
+     TrackedSymbols :> {TypeSystem`NestedGrid`PackagePrivate`$path$$}], 
+    TypeSystem`NestedGrid`PackagePrivate`$bottomBar$$ = Style[
+     Framed[
+      Dynamic[
+       Replace[
+       TypeSystem`NestedGrid`PackagePrivate`mouseAnnotation$$, {
+        TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+           TypeSystem`NestedGrid`PackagePrivate`localHold[
+           TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][Null, 
+           Blank[]] -> "", TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+           TypeSystem`NestedGrid`PackagePrivate`localHold[
+           TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][
+           Pattern[TypeSystem`NestedGrid`PackagePrivate`path$, 
+            Blank[]], 
+           Pattern[TypeSystem`NestedGrid`PackagePrivate`pathType$, 
+            Blank[]], 
+           Pattern[TypeSystem`NestedGrid`PackagePrivate`isLeafHeader$, 
+            Blank[]]] :> (
+          Increment[TypeSystem`NestedGrid`PackagePrivate`$contextMenuTrigger]; 
+          TypeSystem`NestedGrid`PackagePrivate`$lastPath = 
+           TypeSystem`NestedGrid`PackagePrivate`path$; 
+          TypeSystem`NestedGrid`PackagePrivate`$lastPathType = 
+           TypeSystem`NestedGrid`PackagePrivate`pathType$; 
+          TypeSystem`NestedGrid`PackagePrivate`$lastPathIsLeafHeader = 
+           TypeSystem`NestedGrid`PackagePrivate`isLeafHeader$; 
+          TypeSystem`NestedGrid`PackagePrivate`$lastOutputID = 
+           TypeSystem`NestedGrid`PackagePrivate`localHold[
+            TypeSystem`NestedGrid`PackagePrivate`$outputID$$]; 
+          TypeSystem`NestedGrid`PackagePrivate`makePathTrail[
+           TypeSystem`NestedGrid`PackagePrivate`path$, 
+            TypeSystem`NestedGrid`PackagePrivate`makePathElements]), Null :> 
+         Spacer[10], Blank[] :> Spacer[10]}], 
+       TrackedSymbols :> {
+        TypeSystem`NestedGrid`PackagePrivate`mouseAnnotation$$}], FrameStyle -> 
+      None, ImageMargins -> 0, FrameMargins -> 0, Alignment -> Top, 
+      ImageSize -> {Automatic, 15}], FontSize -> 1], 
+    TypeSystem`NestedGrid`PackagePrivate`mouseAnnotation$$ = Null}, 
+    DynamicWrapperBox[
+     DynamicBox[ToBoxes[
+       Dataset`DatasetContent[
+       2, "Path" -> Hold[TypeSystem`NestedGrid`PackagePrivate`$path$$], 
+        "Grid" -> Hold[TypeSystem`NestedGrid`PackagePrivate`$grid$$], "State" -> 
+        Hold[TypeSystem`NestedGrid`PackagePrivate`$state$$], "VPos" -> 
+        Hold[TypeSystem`NestedGrid`PackagePrivate`$vPos$$], "HPos" -> 
+        Hold[TypeSystem`NestedGrid`PackagePrivate`$hPos$$], "TopBar" -> 
+        Hold[TypeSystem`NestedGrid`PackagePrivate`$topBar$$], "BottomBar" -> 
+        Hold[TypeSystem`NestedGrid`PackagePrivate`$bottomBar$$], "OutputID" -> 
+        Hold[
+          TypeSystem`NestedGrid`PackagePrivate`localHold[
+          TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]], StandardForm],
+      ImageSizeCache->{562., {287.6875, 293.3125}},
+      TrackedSymbols:>{
+       TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$grid$$}], 
+     TypeSystem`NestedGrid`PackagePrivate`mouseAnnotation$$ = 
+     MouseAnnotation[],
+     ImageSizeCache->{562., {287.6875, 293.3125}}],
+    BaseStyle->{LineBreakWithin -> False},
+    DynamicModuleValues:>{},
+    Initialization:>
+     Block[{$ContextPath = $ContextPath}, Needs["TypeSystem`"]; 
+      Needs["Dataset`"]; 
+      TypeSystem`NestedGrid`PackagePrivate`$outputID$$ = CreateUUID[]],
+    UnsavedVariables:>{TypeSystem`NestedGrid`PackagePrivate`$outputID$$}],
+   Deploy,
+   DefaultBaseStyle->"Deploy"],
+  Dataset`InterpretDataset[1],
+  Editable->False,
+  SelectWithContents->True,
+  Selectable->False]], "Output",
+ CellChangeTimes->{{3.820862574425826*^9, 3.820862593293141*^9}},
+ CellLabel->"Out[23]=",ExpressionUUID->"1b3a4a09-b02b-4d63-b78c-783840e6edea"]
+}, Open  ]]
+},
+WindowSize->{974.25, 534.75},
+WindowMargins->{{0, Automatic}, {0, Automatic}},
+FrontEndVersion->"12.2 for Linux x86 (64-bit) (December 12, 2020)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"f41d1b71-17e4-4f01-9e39-0669db13e4b8"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[561, 20, 495, 12, 51, "Input",ExpressionUUID->"c2f93116-1d0b-4dfe-8782-6811fce639e4"],
+Cell[CellGroupData[{
+Cell[1081, 36, 647, 14, 51, "Input",ExpressionUUID->"e05e544d-9cc3-4e6b-a96d-97781278da46"],
+Cell[1731, 52, 79306, 1865, 4988, "Output",ExpressionUUID->"631812b7-dd62-400e-b6cf-bb5ea1836616"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[81074, 1922, 205, 3, 29, "Input",ExpressionUUID->"a88c9e0d-289b-4437-bf3c-900fe51d196c"],
+Cell[81282, 1927, 105208, 2105, 600, "Output",ExpressionUUID->"1b3a4a09-b02b-4d63-b78c-783840e6edea"]
+}, Open  ]]
+}
+]
+*)
+
